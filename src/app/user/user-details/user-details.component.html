@@ -1,0 +1,20 @@
+<!-- <p  *ngFor="let key of keys">{{ key }}:</p> -->
+<div class="container">
+    <p>id: {{ obj.id }}</p>
+    <p>Name: {{ obj.name }}</p>
+    <p>Surname: {{ obj.surname }}</p>
+    <p>Age: {{ obj.age }}</p>
+    <p>Date of birth: {{ obj.dateOfBirth | date: 'dd MMM yyyy'}}</p>
+    <h3>Address:</h3>
+    <p>City: {{ obj.address?.city }}</p>
+    <p>Street: {{ obj.address?.street }}</p>
+    <p>PostalCode: {{ obj.address?.postalCode }}</p>
+    <p>Role: {{ obj.age }}</p>
+    <p>username: {{ obj.username }}</p>
+    <img src="{{ obj.profilePhotoUrl }}" alt="">    
+    <p>Gender: {{ obj.gender }} </p>
+    <h3>Company: {{ obj.companies[0].name }}</h3>
+    <p>Description: {{ obj.companies[0].description }}</p>
+    <h3>Company: {{ obj.companies[1].name }}</h3>
+    <p>Description: {{ obj.companies[1].description }}</p>
+</div>
