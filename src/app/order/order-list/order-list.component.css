@@ -1,0 +1,10 @@
+.container {
+    height: 600px;
+    background-color: rgba(174, 154, 200, 0.397);
+    border: 1px solid purple;
+    padding: 10px;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
