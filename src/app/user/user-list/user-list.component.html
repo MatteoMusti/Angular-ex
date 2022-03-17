@@ -1,0 +1,14 @@
+<div class="container">
+    <ol>
+        <li *ngFor="let user of users">
+            <div class="content">
+                <div class="avatar">
+                    <img src="{{ user.profilePhotoUrl }}" alt="">
+                </div>
+                <span class="fullname">{{ user.name }} {{ user.surname }}</span>
+                <span class="age">{{ user.age }}</span>
+                <span class="city">{{ user.address?.city }}</span>
+            </div>
+        </li>
+    </ol>
+</div>
