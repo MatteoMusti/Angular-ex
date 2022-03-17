@@ -1,0 +1,11 @@
+.container {
+    background-color: #EFEBCE;
+    border: 1px solid #D6CE93;
+    border-radius: 10px;
+    width: 500px;
+}
+
+li {
+    margin: 15px 0;
+    font-size: 1.5em; 
+}

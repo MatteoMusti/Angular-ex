@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+span {
+    margin: 0 10px; 
+}
+
+.fullname {
+    font-weight: 600;
+}
+
+.avatar {
+    max-width: 20%; 
+    margin-right: 10px;
+}
+
+img {
+    width: 100%;
+}
