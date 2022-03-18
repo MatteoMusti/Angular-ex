@@ -4,7 +4,7 @@
 }
 
 span {
-    margin: 0 10px; 
+    margin: 0 10px;
 }
 
 .fullname {
@@ -12,10 +12,27 @@ span {
 }
 
 .avatar {
-    max-width: 20%; 
+    max-width: 20%;
     margin-right: 10px;
+    display: flex;
 }
 
 img {
     width: 100%;
+}
+
+/* ROLE */
+.staff {
+    border: 3px solid rgb(6, 6, 153);
+    border-radius: 5px;
+}
+
+.manager {
+    border: 3px solid lightseagreen;
+    border-radius: 5px;
+}
+
+.admin {
+    border: 3px solid rgb(166, 175, 177);
+    border-radius: 5px;
 }

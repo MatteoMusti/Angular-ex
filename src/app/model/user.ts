@@ -1,6 +1,6 @@
 
 export enum Gender { MALE = 'male', FEMALE = 'female' }
-export enum Role { ADMIN = 'admin', MANAGER = 'MANAGER', STAFF = 'staff', OTHER = 'other' }
+export enum Role { ADMIN = 'admin', MANAGER = 'manager', STAFF = 'staff', OTHER = 'other' }
 
 export interface ILocation {
   city: string;
