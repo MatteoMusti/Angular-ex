@@ -8,7 +8,7 @@ import { User } from 'src/app/models/Users';
 })
 export class UserDetailsComponent implements OnInit {
 
-  obj: User = {
+  user: User = {
     id: 3487,
       name: 'Mario',
       surname: 'Rossi',
@@ -47,7 +47,7 @@ export class UserDetailsComponent implements OnInit {
       gender: 'male' // Generi possibili: 'male', 'female', 'other'
   }
 
-  keys: string[] = Object.keys(this.obj)
+  keys: string[] = Object.keys(this.user)
   
   constructor() { }
 
