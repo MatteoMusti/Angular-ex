@@ -11,9 +11,14 @@ export class UserListComponent implements OnInit {
 
   public users: IUser[] = USERS;
 
+  selectedUsers: IUser[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectUser(user: IUser): void {
+    this.selectedUsers.push(user)
+  }
 }

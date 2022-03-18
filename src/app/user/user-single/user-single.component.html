@@ -5,4 +5,5 @@
     <span class="fullname">{{ user.name }} {{ user.surname }}</span>
     <span class="age">{{ user.age }}</span>
     <span class="city">{{ user.address?.city }}</span>
+    <button type="button" (click)="selectUser.emit(user)">Delete</button>
 </div>
