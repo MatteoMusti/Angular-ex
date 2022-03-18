@@ -1,7 +1,7 @@
 <div class="container">
     <ol *ngIf="users.length > 0; else noUsers">
-        <li *ngFor="let user of users" [class.deleted]="selectedUsers.includes(user)">
-            <app-user-single  [user]="user" (selectUser)="selectUser($event)"></app-user-single>
+        <li *ngFor="let user of users" [class.deleted]="removedUsers.includes(user)">
+            <app-user-single  [user]="user" (selectUser)="removeUser($event)"></app-user-single>
         </li>
     </ol>
 </div>

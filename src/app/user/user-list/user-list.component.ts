@@ -13,14 +13,14 @@ export class UserListComponent implements OnInit {
   // Imposto la property user come array vuoto per mostrare il funzionamento dell'ngIf
   public users: IUser[] = [];
 
-  selectedUsers: IUser[] = [];
+  removedUsers: IUser[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  selectUser(user: IUser): void {
-    this.selectedUsers.push(user)
+  removeUser(user: IUser): void {
+    this.removedUsers.push(user)
   }
 }
