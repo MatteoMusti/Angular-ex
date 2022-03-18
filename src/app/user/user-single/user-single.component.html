@@ -1,4 +1,5 @@
-<div class="container" [ngClass]="{'staff': user.role === 'staff', 'manager': user.role === 'manager', 'admin': user.role === 'admin'}">
+<!-- <div class="container" [ngClass]="{'staff': user.role === 'staff', 'manager': user.role === 'manager', 'admin': user.role === 'admin'}"> -->
+<div class="container" [class] = "user.role">
     <div class="avatar">
         <img src="{{ user.profilePhotoUrl }}" alt="">
     </div>
