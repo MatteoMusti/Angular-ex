@@ -9,7 +9,9 @@ import { IUser } from 'src/app/model/user';
 })
 export class UserListComponent implements OnInit {
 
-  public users: IUser[] = USERS;
+  // public users: IUser[] = USERS;
+  // Imposto la property user come array vuoto per mostrare il funzionamento dell'ngIf
+  public users: IUser[] = [];
 
   selectedUsers: IUser[] = [];
 
