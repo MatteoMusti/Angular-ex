@@ -1,7 +1,8 @@
 <div class="container">
     <ol>
-        <li *ngFor="let user of users" [class.deleted]="removedUsers.includes(user)">
-            <app-user-single  [user]="user" (selectUser)="removeUser($event)"></app-user-single>
+        <li *ngFor="let user of users">
+            <app-user-single  [user]="user" (selectUser)="deleteUser($event)"></app-user-single>
+            <!-- catturo l'evento del child e passo l'id come parametro della funzione per rimuovere l'user -->
         </li>
     </ol>
 </div>

@@ -5,5 +5,6 @@
     <span class="fullname">{{ user.name }} {{ user.surname }}</span>
     <span class="age">{{ user.age }}</span>
     <span class="city">{{ user.address?.city }}</span>
-    <button type="button" (click)="selectUser.emit(user)">Delete</button>
+    <button type="button" (click)="selectUser.emit(user.id)">Delete</button>
+    <!-- Al click emetto un evento che contiene l'id dell'user selezionato -->
 </div>
