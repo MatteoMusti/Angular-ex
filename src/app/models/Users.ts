@@ -1,29 +1,29 @@
 export type Role = "staff" | "student" | "manager" | "admin";
 export type Gender = "male" | "female" | "other";
 
-export interface Place {
+export interface IPlace {
   city: string;
   street: string;
   postalCode: string;
 }
 
-export interface Company {
+export interface ICompany {
   id: number;
   name: string;
   description?: string;
-  location: Place;
+  location: IPlace;
 }
 
-export interface User {
+export interface IUser {
   id: number;
   name: string;
   surname: string;
   age: number;
   dateOfBirth: string;
-  address: Place;
+  address: IPlace;
   role: Role;
   username: string;
   profilePhotoUrl?: string;
-  companies: Company[];
+  companies: ICompany[];
   gender: Gender;
 }

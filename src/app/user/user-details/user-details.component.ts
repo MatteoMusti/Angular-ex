@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/Users';
+import { IUser } from 'src/app/models/Users';
 
 @Component({
   selector: 'app-user-details',
@@ -8,7 +8,7 @@ import { User } from 'src/app/models/Users';
 })
 export class UserDetailsComponent implements OnInit {
 
-  user: User = {
+  user: IUser = {
     id: 3487,
       name: 'Mario',
       surname: 'Rossi',
@@ -55,7 +55,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
 
-  getKeys(object: User) {
+  getKeys(object: IUser) {
     Object.keys(object)
   }
 }
