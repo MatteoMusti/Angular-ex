@@ -1,10 +1,13 @@
 <!-- <div class="container" [ngClass]="{'staff': user.role === 'staff', 'manager': user.role === 'manager', 'admin': user.role === 'admin'}"> -->
-<div class="container" [class] = "user.role">
-    <div class="avatar">
-        <img src="{{ user.profilePhotoUrl }}" alt="">
+<div class="container">
+    <span class="li-marker">{{ index + 1 }}.</span>
+    <div class="user" [class]="user.role">
+        <div class="avatar">
+            <img src="{{ user.profilePhotoUrl }}" alt="">
+        </div>
+        <span class="fullname">{{ user.name }} {{ user.surname }}</span>
+        <span class="age">{{ user.age }}</span>
+        <span class="city">{{ user.address?.city }}</span>
+        <button type="button" (click)="selectUser.emit(user.id)">Delete</button>
     </div>
-    <span class="fullname">{{ user.name }} {{ user.surname }}</span>
-    <span class="age">{{ user.age }}</span>
-    <span class="city">{{ user.address?.city }}</span>
-    <button type="button" (click)="selectUser.emit(user)">Delete</button>
 </div>

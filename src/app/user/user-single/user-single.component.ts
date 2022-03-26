@@ -9,7 +9,8 @@ import { IUser } from 'src/app/model/user';
 export class UserSingleComponent implements OnInit {
 
   @Input() user!: IUser
-  @Output() selectUser = new EventEmitter<IUser>();
+  @Input() index!: number
+  @Output() selectUser = new EventEmitter<number>();
 
   constructor() { }
 

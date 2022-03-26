@@ -1,10 +1,15 @@
 .container {
     display: flex;
     align-items: center;
+    font-size: 1.25em;
 }
 
-span {
-    margin: 0 10px;
+.user {
+    display: flex;
+    align-items: center;
+    font-size: 1.25em;
+    margin: 15px 0;
+    justify-content: space-between;
 }
 
 .fullname {
@@ -13,12 +18,15 @@ span {
 
 .avatar {
     max-width: 20%;
-    margin-right: 10px;
     display: flex;
 }
 
 img {
     width: 100%;
+}
+
+.li-marker {
+    margin-right: 10px;
 }
 
 /* ROLE */
