@@ -9,6 +9,7 @@ import { IUser } from 'src/app/model/user';
 export class UserSingleComponent implements OnInit {
 
   @Input() user!: IUser
+  @Input() index!: number
 
   constructor() { }
 

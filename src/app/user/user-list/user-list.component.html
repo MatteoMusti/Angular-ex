@@ -1,7 +1,3 @@
 <div class="container">
-    <ol>
-        <li *ngFor="let user of users">
-            <app-user-single [user]="user"></app-user-single>
-        </li>
-    </ol>
+    <app-user-single *ngFor="let user of users; index as i" [user]="user" [index]="i"></app-user-single>
 </div>
