@@ -10,7 +10,6 @@ export class UserSingleComponent implements OnInit {
 
   @Input() user!: IUser
   @Input() index!: number
-  // @Output() selectUser = new EventEmitter<IUser>();
   @Output() selectUser = new EventEmitter<number>();
 
   constructor() { }
