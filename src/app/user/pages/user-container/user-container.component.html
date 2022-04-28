@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h3>user-container.component</h3>
+
+    <div class="user-container">
+        <div class="list-container">
+            <app-user-list (detailsOpened)="showDetails($event)"></app-user-list>
+        </div>
+        <div class="detail-container" *ngIf="details">
+            <app-user-detail (detailsClosed)="showDetails($event)"></app-user-detail>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.container {
+    background-color: lightcyan;
+    border: 1px solid cyan;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+button {
+    padding: 5px;
+}

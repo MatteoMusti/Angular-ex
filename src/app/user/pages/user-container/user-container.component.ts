@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserContainerComponent implements OnInit {
 
+  details! : boolean
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+ showDetails(value: boolean) {
+   this.details = value
+ }
 
 }
