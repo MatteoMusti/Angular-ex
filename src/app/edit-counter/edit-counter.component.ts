@@ -10,8 +10,8 @@ export class EditCounterComponent implements OnInit {
 
   // editValue: number = document.querySelector('input').value
 
-  @Output() valueToAdd = new EventEmitter();
-  @Output() valueToSubtract = new EventEmitter();
+  @Output() add = new EventEmitter();
+  @Output() subtract = new EventEmitter();
 
   constructor() { }
 
@@ -20,12 +20,12 @@ export class EditCounterComponent implements OnInit {
 
   toAdd() {
     let value = Number(document.querySelector('input')!.value);
-    this.valueToAdd.emit(value)
+    this.add.emit(value)
   }
 
   toSubtract() {
     let value = Number(document.querySelector('input')!.value);
-    this.valueToSubtract.emit(value)
+    this.subtract.emit(value)
   }
 
 }
