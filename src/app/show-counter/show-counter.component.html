@@ -4,6 +4,6 @@
     <h3 *ngIf="counter < 0">Errore: il counter non può essere negativo!</h3>
 <!-- </ng-container> -->
 
-<app-edit-counter></app-edit-counter>
+<app-edit-counter (add)="add($event)" (subtract)="subtract($event)"></app-edit-counter>
 
 <!-- (subtract)="subtract($event)" -->

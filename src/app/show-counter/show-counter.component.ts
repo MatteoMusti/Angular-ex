@@ -18,6 +18,15 @@ export class ShowCounterComponent implements OnInit, OnDestroy {
     this.subscription = this.counterService.getValue().subscribe(data => this.counter = data)
     console.log(this.counter)
   }
+
+  add(value: number) {
+    this.counterService.increase(value).subscribe(data => this.counter = data)
+  }
+
+  subtract(value: number) {
+    this.counterService.decrease(value).subscribe(data => this.counter = data)
+
+  }
     
   // subtract(value: number) {
     //   this.counter = this.counterService.decrease(value)

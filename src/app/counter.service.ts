@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +17,17 @@ export class CounterService {
     )
   }
 
-  // increase(value: number): Observable<number> {
-    
-  // }
+  increase(value: number): Observable<number> {
+     return this.counter$.pipe(
+      map(x => x + value)
+    )
+  }
+
+  decrease(value: number): Observable<number> {
+     return this.counter$.pipe(
+      map(x => x - value)
+    )
+  }
 
   // increase(value: number = 1) {
   //   this.counter += value;

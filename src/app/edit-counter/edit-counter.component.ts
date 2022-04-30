@@ -18,14 +18,14 @@ export class EditCounterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toAdd() {
+  toAdd(): void {
     let value = Number(document.querySelector('input')!.value);
-    this.add.emit(value)
+    this.add.emit(value);
   }
 
-  toSubtract() {
+  toSubtract(): void {
     let value = Number(document.querySelector('input')!.value);
-    this.subtract.emit(value)
+    this.subtract.emit(value);
   }
 
 }
