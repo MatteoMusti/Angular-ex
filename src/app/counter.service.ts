@@ -6,9 +6,9 @@ import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 })
 export class CounterService {
 
-  Counter: number = 0
+  // Counter: number = 0
 
-  private subCounter = new BehaviorSubject(this.Counter);
+  private subCounter = new BehaviorSubject(0);
   public counter$ = this.subCounter.asObservable();
 
   constructor() { }
@@ -19,24 +19,24 @@ export class CounterService {
     )
   }
 
-  increase(value: number): Observable<number> {
-    this.Counter += value;
-    this.subCounter.next(this.Counter)
-     return this.counter$.pipe(
-          tap(data => console.log(data))
-     )
+  increase(value: number): void {
+    // this.Counter += value;
+    this.subCounter.next(this.subCounter.value + value)
+    //  return this.counter$.pipe(
+    //       tap(data => console.log(data))
+    //  )
     //  .pipe(
     //   map(x => x + value),
     //   tap(data => console.log(data))
     // )
   }
 
-  decrease(value: number): Observable<number> {
-    this.Counter -= value;
-    this.subCounter.next(this.Counter)
-     return this.counter$.pipe(
-          tap(data => console.log(data))
-     )
+  decrease(value: number): void {
+    if (this.subCounter.value < value){
+      console.log('il counter non può essere negativo')
+    }
+    this.subCounter.next(this.subCounter.value - value)
+
     //    return this.counter$.pipe(
   //     map(x => x - value),
   //     tap(data => console.log(data))
@@ -57,6 +57,6 @@ export class CounterService {
   //   this.counter -= value;
   //   return this.counter;
   // }
-
-
 }
+
+
