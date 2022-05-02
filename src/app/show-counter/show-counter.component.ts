@@ -20,15 +20,14 @@ export class ShowCounterComponent implements OnInit, OnDestroy {
   }
 
   add(value: number): void {
-    // this.counterService.increase(value).subscribe(data => this.counter = data)
     this.counterService.increase(value)
   }
 
   subtract(value: number): void {
     this.counterService.decrease(value)
   }
-    
-    ngOnDestroy(): void {
-      this.subscription.unsubscribe();
-    }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

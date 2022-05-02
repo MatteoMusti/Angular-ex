@@ -8,8 +8,6 @@ import { CounterService } from '../counter.service';
 })
 export class EditCounterComponent implements OnInit {
 
-  // editValue: number = document.querySelector('input').value
-
   @Output() add = new EventEmitter();
   @Output() subtract = new EventEmitter();
 

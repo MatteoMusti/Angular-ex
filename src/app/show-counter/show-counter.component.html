@@ -1,9 +1,5 @@
 <h1>Counter</h1>
-<!-- <ng-container *ngIf="counter$ | async as counter"> -->
     <h2 *ngIf="counter >= 0"> {{ counter }} </h2>
     <h3 *ngIf="counter < 0">Errore: il counter non può essere negativo!</h3>
-<!-- </ng-container> -->
 
 <app-edit-counter (add)="add($event)" (subtract)="subtract($event)"></app-edit-counter>
-
-<!-- (subtract)="subtract($event)" -->
