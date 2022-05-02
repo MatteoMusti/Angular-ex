@@ -6,29 +6,44 @@ import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 })
 export class CounterService {
 
-  private counter = new BehaviorSubject(0);
-  public counter$ = this.counter.asObservable();
+  Counter: number = 0
+
+  private subCounter = new BehaviorSubject(this.Counter);
+  public counter$ = this.subCounter.asObservable();
 
   constructor() { }
 
   getValue(): Observable<number> {
     return this.counter$.pipe(
-      tap(() => console.log('getValue eseguito'))
+      tap((data) => console.log('getValue eseguito:', data))
     )
   }
 
   increase(value: number): Observable<number> {
+    this.Counter += value;
+    this.subCounter.next(this.Counter)
      return this.counter$.pipe(
-      map(x => x + value)
-    )
+          tap(data => console.log(data))
+     )
+    //  .pipe(
+    //   map(x => x + value),
+    //   tap(data => console.log(data))
+    // )
   }
 
   decrease(value: number): Observable<number> {
+    this.Counter -= value;
+    this.subCounter.next(this.Counter)
      return this.counter$.pipe(
-      map(x => x - value)
-    )
+          tap(data => console.log(data))
+     )
+    //    return this.counter$.pipe(
+  //     map(x => x - value),
+  //     tap(data => console.log(data))
+  //   )
   }
 
+  
   // increase(value: number = 1) {
   //   this.counter += value;
   //   return this.counter;

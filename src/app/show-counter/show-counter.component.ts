@@ -9,8 +9,8 @@ import { CounterService } from '../counter.service';
 })
 export class ShowCounterComponent implements OnInit, OnDestroy {
 
-  counter!: number
-  subscription!: Subscription
+  counter!: number;
+  subscription!: Subscription;
 
   constructor(private counterService: CounterService) { }
 
@@ -19,18 +19,13 @@ export class ShowCounterComponent implements OnInit, OnDestroy {
     console.log(this.counter)
   }
 
-  add(value: number) {
+  add(value: number): void {
     this.counterService.increase(value).subscribe(data => this.counter = data)
   }
 
-  subtract(value: number) {
+  subtract(value: number): void {
     this.counterService.decrease(value).subscribe(data => this.counter = data)
-
   }
-    
-  // subtract(value: number) {
-    //   this.counter = this.counterService.decrease(value)
-    // }
     
     ngOnDestroy(): void {
       this.subscription.unsubscribe();
