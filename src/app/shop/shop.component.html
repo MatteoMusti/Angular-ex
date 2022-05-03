@@ -4,7 +4,7 @@
         <label for="beersList">Scegli la tua birra:</label>
         <select name="beers" id="beersList" class="form-control" required ngModel>
             <ng-container *ngFor="let beer of beers">
-                <option value="{{ beer.name }}" id="beerSelect">{{ beer.name }}</option>
+                <option value="{{ beer.name }}" id="beerSelect" (select)="checkType()">{{ beer.name }}</option>
             </ng-container>
         </select>
         <label for="typeList">Scegli la dimensione :</label>
@@ -22,4 +22,6 @@
             <p>Price: {{ beer.price }}</p>
         </div>
     </ng-container>
+
+    <p>{{ selectedBeer }}</p>
 </div>
