@@ -1,27 +1,27 @@
 <div class="container">
-    <p>Beer Shop</p>
+    <h2>Beer Shop</h2>
     <form #f="ngForm">
         <label for="beersList">Scegli la tua birra:</label>
-        <select name="beers" id="beersList" class="form-control" required ngModel>
+        <select name="beers" id="beersList" class="form-control" required (click)="checkType()" [(ngModel)]="name">
             <ng-container *ngFor="let beer of beers">
-                <option value="{{ beer.name }}" id="beerSelect" (select)="checkType()">{{ beer.name }}</option>
+                <option value="{{ beer.name }}" id="beerSelect">{{ beer.name }}</option>
             </ng-container>
         </select>
         <label for="typeList">Scegli la dimensione :</label>
-        <select name="types" id="typeList" class="form-control" required ngModel>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
+        <select name="types" id="typeList" class="form-control" required [(ngModel)]="type">
+            <option value="small" [disabled]="type !== 'small'">Small</option>
+            <option value="medium" [disabled]="type !== 'medium'">Medium</option>
         </select>
-        <button (click)="getBeer()" [disabled]="!f.form.valid">Search</button>
-    </form>                                                                                                                                                                                                                                                
+        <button class="btn btn-primary" (click)="getBeer()" [disabled]="!f.form.valid">Search</button>
+    </form>
 
-    <ng-container *ngIf="selectedBeers">    
-        <div class="card" *ngFor="let beer of selectedBeers">
-            <p>Name: {{ beer.name }}</p>
-            <p>Type: {{ beer.type }}</p>
-            <p>Price: {{ beer.price }}</p>
+    <ng-container *ngIf="selectedBeers">
+        <div class="card-container">
+            <div class="card" *ngFor="let beer of selectedBeers">
+                <p>Name: {{ beer.name }}</p>
+                <p>Type: {{ beer.type }}</p>
+                <p>Price: {{ beer.price }}</p>
+            </div>
         </div>
     </ng-container>
-
-    <p>{{ selectedBeer }}</p>
 </div>

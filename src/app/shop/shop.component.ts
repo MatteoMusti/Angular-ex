@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { BeerService } from '../beer.service';
 import { Beer } from '../models/beer';
 
@@ -11,9 +10,10 @@ import { Beer } from '../models/beer';
 export class ShopComponent implements OnInit {
 
   beers!: Beer[];
-  selectedBeer!: Beer;
   selectedBeers: Beer[] = [];
 
+  name: string = '';
+  type: string = '';
 
   constructor(private beerService: BeerService) { }
 
@@ -24,29 +24,21 @@ export class ShopComponent implements OnInit {
   }
 
   checkType(): void {
-    const type = (document.getElementById('typeList') as HTMLSelectElement).value;
-    const name = (document.getElementById('beersList') as HTMLSelectElement).value;
-    const beerId = this.beers.find(beer => beer.name === name)?.id;
+    const beerId = this.beers.find(beer => beer.name === this.name)?.id;
 
     this.beerService.getBeerById(beerId!).subscribe((data) => {
-      if (data.type === type){
-        this.selectedBeer = data
-      }
+      this.type = data.type
     })
   }
 
   getBeer(): void {
-    const name = (document.getElementById('beersList') as HTMLSelectElement).value;
-    const type = (document.getElementById('typeList') as HTMLSelectElement).value;
-    const beerId = this.beers.find(beer => beer.name === name)?.id;
+    const beerId = this.beers.find(beer => beer.name === this.name)?.id;
 
     this.beerService.getBeerById(beerId!).subscribe((data) => {
       if (this.selectedBeers.includes(data)) {
-          return this.selectedBeers
+        return this.selectedBeers
       }
-      if (data.type === type) {     
-        this.selectedBeers.push(data);
-      }
+      this.selectedBeers.push(data);
       return this.selectedBeers
     })
   }

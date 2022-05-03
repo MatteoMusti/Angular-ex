@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, filter, from, Observable, of, } from 'rxjs';
+import { BehaviorSubject, from, Observable} from 'rxjs';
 import { BEERS } from './mock/mock-beers';
 import { Beer } from './models/beer';
 
