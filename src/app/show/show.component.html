@@ -1,0 +1,11 @@
+<h2>Ci sono {{ properties.length }} proprietà</h2>
+<div class="properties">
+    <p>Properties: [ <span *ngFor="let prop of properties">"{{ prop }}", </span> ]</p>
+</div>
+
+
+<h2>Apis Info</h2>
+<div *ngFor="let prop of properties">
+    <p>Name: {{ prop }} </p>
+    <p>Endpoint: </p>
+</div>
