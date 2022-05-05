@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidService } from '../covid.service';
-import { Country } from '../model/Country';
+import { CountryRoute } from '../model/CountryRoute';
 
 @Component({
   selector: 'app-show',
@@ -11,22 +11,19 @@ export class ShowComponent implements OnInit {
 
   constructor(private covid: CovidService) { }
 
-  object = {};
-  properties!: string[];
-  map = {};
+  routeProps: { name: string; endpoint: string }[] = [];
 
   ngOnInit(): void {
-    this.covid.getAll()
-      .subscribe((data) => {
-        this.object = { ...data };
-        this.properties = Object.keys(this.object);
 
-        let entries = Object.entries(this.object)
-        this.map = entries.map(result => {
-          return { name: result[0], endpoint: result[1] }
-        })
-        console.log(this.map)
+    this.covid.getAll().subscribe((data) => {
+      this.routeProps = Object.entries(data).map((result) => {
+        return {
+          name: result[0],
+          endpoint: result[1].Path,
+        };
       });
+    })
+    
   }
 
 }

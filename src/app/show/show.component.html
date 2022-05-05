@@ -1,11 +1,10 @@
-<h2>Ci sono {{ properties.length }} proprietà</h2>
+<h2>Ci sono {{ routeProps.length }} proprietà</h2>
 <div class="properties">
-    <p>Properties: [ <span *ngFor="let prop of properties">"{{ prop }}", </span> ]</p>
+    <p>Properties: [ <span *ngFor="let prop of routeProps">"{{ prop.name }}", </span> ]</p>
 </div>
 
-
 <h2>Apis Info</h2>
-<div *ngFor="let prop of properties">
-    <p>Name: {{ prop }} </p>
-    <p>Endpoint: </p>
+<div *ngFor="let prop of routeProps">
+    <p>Name: {{ prop.name }} </p>
+    <p>Endpoint: {{ prop.endpoint }} </p>
 </div>

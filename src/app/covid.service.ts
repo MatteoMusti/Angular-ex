@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Country } from './model/Country';
+import { CountryRoute } from './model/CountryRoute';
 
 // import { Observable, throwError } from 'rxjs';
 // import { catchError, retry } from 'rxjs/operators';
@@ -13,7 +13,7 @@ export class CovidService {
   constructor(private httpClient: HttpClient) { }
 
   getAll() {
-    return this.httpClient.get<Country>('https://api.covid19api.com/')
+    return this.httpClient.get<CountryRoute>('https://api.covid19api.com/')
   }
 
 }
