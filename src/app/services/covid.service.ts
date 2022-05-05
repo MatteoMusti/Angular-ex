@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CountryRoute } from './model/CountryRoute';
+import { CountryRoute } from '../model/CountryRoute';
 
 import { throwError } from 'rxjs';
 import { catchError, retry, tap } from 'rxjs/operators';

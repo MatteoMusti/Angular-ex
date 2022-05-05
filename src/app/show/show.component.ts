@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CovidService } from '../covid.service';
+import { CovidService } from '../services/covid.service';
 import { CountryRoute } from '../model/CountryRoute';
 
 @Component({
