@@ -1,0 +1,26 @@
+<div class="joke-container">
+    <p>{{ joke.setup }}</p>
+    <p *ngIf="!joke.setup">{{ joke.joke }}</p>
+    <p>{{ joke.delivery }}</p>
+    <button (click)="add(true)">Like</button>
+    <button (click)="add(false)">Dislike</button>
+</div>
+
+<div class="liked-container">
+    <h2>Joke piaciuti</h2>
+    <div class="liked-joke" *ngFor="let joke of likedJokes; index as i">
+        <div>{{i + 1}}</div>
+        <div> {{ joke.setup }} </div>
+        <div> {{ joke.delivery }}</div>
+        <button (click)="swap(i, false)">Dislike</button>
+    </div>
+
+<div class="disliked-container">
+    <h2>Joke non piaciuti</h2>
+    <div class="disliked-joke" *ngFor="let joke of dislikedJokes; index as i">
+        <div>{{i + 1}}</div>
+        <div> {{ joke.setup }} </div>
+        <div> {{ joke.delivery }}</div>
+        <button (click)="swap(i, true)">Like</button>
+    </div>
+</div>
