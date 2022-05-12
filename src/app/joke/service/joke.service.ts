@@ -9,10 +9,6 @@ export class JokeService {
 
   constructor(private http: HttpClient) { }
 
-  joke = {}
-  liked = [];
-  disliked = [];
-
   getJoke(): Observable<any> {
     return this.http.get('https://v2.jokeapi.dev/joke/Any').pipe(
       repeat({ delay: 5000 }),
