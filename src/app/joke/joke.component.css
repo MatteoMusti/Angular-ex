@@ -1,0 +1,107 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.main-container > div {
+    color: black;
+    min-width: 80%;
+    max-width: 80%;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.joke-container {
+    background: #FFFF;
+}
+
+.joke {
+    display: flex;
+    align-items : center;
+    margin-top: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    border-radius: 30px;
+    border: 0;
+    padding: 8px 18px;
+    margin: 10px 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    width: 80px;
+    font-size: 1rem;
+}
+
+.btn-like {
+    background-color: lightgreen;
+}
+.btn-dislike {
+    background-color: lightcoral;
+}
+
+.liked-container {
+    background-color: rgba(172, 245, 98, 0.88);
+}
+
+.disliked-container {
+    background-color: rgba(246, 75, 75, 0.985);
+}
+
+.liked-container, .disliked-container {
+    max-height: 30vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.liked-container::-webkit-scrollbar,
+.disliked-container::-webkit-scrollbar {
+    width: 5px;
+}
+.liked-container::-webkit-scrollbar-track ,
+.disliked-container::-webkit-scrollbar-track  {
+    background-color: transparent;
+}
+.liked-container::-webkit-scrollbar-thumb ,
+.disliked-container::-webkit-scrollbar-thumb  {
+    background: rgb(59, 59, 59);
+    border-radius: 20px;
+}
+
+.liked-joke, .disliked-joke {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1.5px solid black;
+}
+
+.index {
+    border-radius: 50%;
+    background-color: #FFFF;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    margin-right: 8px;
+}

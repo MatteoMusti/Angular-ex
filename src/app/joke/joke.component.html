@@ -1,26 +1,47 @@
-<div class="joke-container">
-    <p>{{ joke.setup }}</p>
-    <p *ngIf="!joke.setup">{{ joke.joke }}</p>
-    <p>{{ joke.delivery }}</p>
-    <button (click)="add(true)">Like</button>
-    <button (click)="add(false)">Dislike</button>
-</div>
-
-<div class="liked-container">
-    <h2>Joke piaciuti</h2>
-    <div class="liked-joke" *ngFor="let joke of likedJokes; index as i">
-        <div>{{i + 1}}</div>
-        <div> {{ joke.setup }} </div>
-        <div> {{ joke.delivery }}</div>
-        <button (click)="swap(i, false)">Dislike</button>
+<div class="main-container">
+    <h1>Joke App</h1>
+    <div class="joke-container">
+        <h3>Joke Attuale</h3>
+        <p>{{ joke.setup }}</p>
+        <p *ngIf="!joke.setup">{{ joke.joke }}</p>
+        <p *ngIf="joke.setup">{{ joke.delivery }}</p>
+        <div class="btn-container">
+            <button class="btn btn-like" (click)="add(true)">Like</button>
+            <button class="btn btn-dislike" (click)="add(false)">Dislike</button>
+        </div>
     </div>
 
-<div class="disliked-container">
-    <h2>Joke non piaciuti</h2>
-    <div class="disliked-joke" *ngFor="let joke of dislikedJokes; index as i">
-        <div>{{i + 1}}</div>
-        <div> {{ joke.setup }} </div>
-        <div> {{ joke.delivery }}</div>
-        <button (click)="swap(i, true)">Like</button>
+    <div class="liked-container">
+        <h3>Joke piaciuti</h3>
+        <div class="liked-joke" *ngFor="let joke of likedJokes; index as i">
+            <div class="joke">
+                <div class="index">{{i + 1}}</div>
+                <div class="text">
+                    <p>{{ joke.setup }}</p>
+                    <p *ngIf="!joke.setup">{{ joke.joke }}</p>
+                    <p> {{ joke.delivery }}</p>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-dislike" (click)="swap(i, false)">Dislike</button>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="disliked-container">
+        <h3>Joke non piaciuti</h3>
+        <div class="disliked-joke" *ngFor="let joke of dislikedJokes; index as i">
+            <div class="joke">
+                <div class="index">{{i + 1}}</div>
+                <div class="text">
+                    <div> {{ joke.setup }} </div>
+                    <p *ngIf="!joke.setup">{{ joke.joke }}</p>
+                    <div> {{ joke.delivery }}</div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn btn-like" (click)="swap(i, true)">Like</button>
+            </div>
+        </div>
+    </div>
