@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, repeat, retry, tap, throwError } from 'rxjs';
+import { catchError, Observable, repeat, retry, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class JokeService {
   liked = [];
   disliked = [];
 
-  getJoke() {
+  getJoke(): Observable<any> {
     return this.http.get('https://v2.jokeapi.dev/joke/Any').pipe(
       repeat({ delay: 5000 }),
       retry(3),
